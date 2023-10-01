@@ -22,8 +22,19 @@ public class Program
             return 1;
         }
 
-        var grid = ParseGrid(args[0]);
-        var solver = new Solver();
+        var filePath = args[0];
+        int[,] grid;
+        try
+        {
+            grid = ParseGrid(filePath);
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error reading puzzle from {filePath}: {ex.Message}");
+            return 1;
+        }
+         
+        using var solver = new Solver();
         for (int rowIdx = 0; rowIdx < 9; ++rowIdx)
         for (int colIdx = 0; colIdx < 9; ++colIdx)
         {
