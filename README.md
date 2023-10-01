@@ -7,6 +7,11 @@ See file `Solver.cs` for actual usage of Z3.
 
 ## Example execution
 ```
+>smtsudoku
+Usage: Smtsudoku [file path]
+
+The file should have 9 lines (rows), each 9 columns in length.
+Each digit (or missing digit) should be one character in size.
 > cat puzzle
 ..628....
 ..91.6...
